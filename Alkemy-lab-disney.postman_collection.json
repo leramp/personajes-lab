@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "8bba132a-ba15-41c1-b588-fb91e10c19c2",
+		"name": "Alkemy-lab-disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17946818"
+	},
+	"item": [
+		{
+			"name": "generos",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "personajes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     private Long id;\r\n    private String imagen;\r\n    private String nombre;\r\n    private int edad;\r\n    private Long peso;\r\n    private String historia;\r\n    private List<PeliculaDTO> peliculas;\r\n    \"imagen\":\"/usr/tmp/img6.jpg\",\r\n    \"denominacion\" :\"Empire State\",\r\n    \"fechaCreacion\":\"1915-06-28\",\r\n    \"altura\":\"200\",\r\n    \"historia\":\"anda a saber 3\" \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personajes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personajes/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/icons/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"icons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personajes?filters",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "personajes/id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"imagen\":\"/usr/tmp/img2.jpg\",\r\n    \"nombre\":\"Dumbo\",\r\n    \"edad\":5,\r\n    \"peso\":150,\r\n    \"historia\":\"vuela con las orejas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personajes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personajes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personajes/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personajes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personajes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "peliculas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "peliculas/id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "peliculas?filters",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "peliculas/id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/peliculas/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peliculas",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "peliculas/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/peliculas/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peliculas",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
