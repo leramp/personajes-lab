@@ -7,6 +7,22 @@
 	},
 	"item": [
 		{
+			"name": "singup",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "generos",
 			"request": {
 				"method": "POST",

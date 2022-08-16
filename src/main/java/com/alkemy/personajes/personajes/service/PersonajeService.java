@@ -15,6 +15,10 @@ public interface PersonajeService {
     PersonajeDTO getDetailsById(Long id);
 
     List<PersonajeBasicDTO> getByFilters(String name, String age, List<Long> movies, String order);
+//    PersonajeDTO addPelicula(Long idPersonaje, Long idPelicula);
+//    void removePelicula(Long idPersonaje, Long idPelicula);
+
+
 
 
 }

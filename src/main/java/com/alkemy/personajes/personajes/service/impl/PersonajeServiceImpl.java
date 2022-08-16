@@ -3,11 +3,13 @@ package com.alkemy.personajes.personajes.service.impl;
 import com.alkemy.personajes.personajes.dto.PersonajeBasicDTO;
 import com.alkemy.personajes.personajes.dto.PersonajeDTO;
 import com.alkemy.personajes.personajes.dto.PersonajeFiltersDTO;
+import com.alkemy.personajes.personajes.entity.PeliculaEntity;
 import com.alkemy.personajes.personajes.entity.PersonajeEntity;
 import com.alkemy.personajes.personajes.exception.ParamNotFound;
 import com.alkemy.personajes.personajes.mapper.PersonajeMapper;
 import com.alkemy.personajes.personajes.repository.PersonajeRepository;
 import com.alkemy.personajes.personajes.repository.specification.PersonajeSpecification;
+import com.alkemy.personajes.personajes.service.PeliculaService;
 import com.alkemy.personajes.personajes.service.PersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,9 @@ public class PersonajeServiceImpl implements PersonajeService {
     private PersonajeMapper personajeMapper;
 
     private PersonajeSpecification personajeSpecification;
+//    private PersonajeEntity personajeEntity;
+//    private PeliculaEntity peliculaEntity;
+//    private PeliculaService peliculaService;
 
 
     @Autowired
@@ -29,12 +34,18 @@ public class PersonajeServiceImpl implements PersonajeService {
             PersonajeRepository personajeRepository,
             PersonajeSpecification personajeSpecification,
             PersonajeMapper personajeMapper
+//            PersonajeEntity personajeEntity,
+//            PeliculaEntity peliculaEntity,
+//            PeliculaService peliculaService
 
     )
     {
         this.personajeRepository = personajeRepository;
         this.personajeSpecification = personajeSpecification;
         this.personajeMapper = personajeMapper;
+//        this.peliculaService = peliculaService;
+//        this.personajeEntity = personajeEntity;
+//        this.peliculaEntity = peliculaEntity;
 
     }
 
@@ -81,4 +92,26 @@ public class PersonajeServiceImpl implements PersonajeService {
             List<PersonajeBasicDTO> dtos = this.personajeMapper.personajeEntityList2BasicDTOList(entities);
             return dtos;
     }
+//    public PersonajeDTO addPelicula(Long idPersonaje, Long idPelicula){
+//
+//        PersonajeEntity personajeEntity = this.getEntityById(idPersonaje);
+//
+//        PeliculaEntity peliculaEntity = this.peliculaService.getEntityById(idPelicula);
+//        personajeEntity.addPelicula(peliculaEntity);
+//
+//        PersonajeEntity entitySaved= this.personajeRepository.save(personajeEntity);
+//        PersonajeDTO result = this.personajeMapper.personajeEntity2DTO(entitySaved, true);
+//        return result;
+//    }
+//    public PersonajeEntity getEntityById(Long id){
+//        Optional<PersonajeEntity> entity = personajeRepository.findById(id);
+//        return entity.get();
+//    }
+//    public void removePelicula(Long idPersonaje, Long idPelicula){
+//        PersonajeEntity personajeEntity = this.getEntityById(idPersonaje);
+//        PeliculaEntity peliculaEntity = this.peliculaService.getEntityById(idPelicula);
+//        personajeEntity.removePelicula(peliculaEntity);
+//    }
+
+
 }
