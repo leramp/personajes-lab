@@ -58,17 +58,17 @@ public class PersonajeController {
         List<PersonajeBasicDTO> personajes = this.personajeService.getByFilters(name, age, movies, order);
         return ResponseEntity.ok(personajes);
     }
-//    @PostMapping("/{id}/pelicula/{idPelicula}")
-//    public ResponseEntity<PersonajeDTO> addPelicula(@PathVariable Long id, @PathVariable Long idPelicula) {
-//        PersonajeDTO result = this.personajeService.addPelicula(id, idPelicula);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(result);
-//    }
-//
-//    @DeleteMapping("/{id}/pelicula/{idPelicula}")
-//    public ResponseEntity<Void> removePelicula(@PathVariable Long id, @PathVariable Long idPelicula) {
-//        this.personajeService.removePelicula(id, idPelicula);
-//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-//    }
+    @PostMapping("/{id}/pelicula/{idPelicula}")//2
+    public ResponseEntity<PersonajeDTO> addPelicula(@PathVariable Long id, @PathVariable Long idPelicula) {
+        PersonajeDTO result = this.personajeService.addPelicula(id, idPelicula);
+        return ResponseEntity.status(HttpStatus.CREATED).body(result);
+    }
+
+    @DeleteMapping("/{id}/pelicula/{idPelicula}")//2
+    public ResponseEntity<Void> removePelicula(@PathVariable Long id, @PathVariable Long idPelicula) {
+        this.personajeService.removePelicula(id, idPelicula);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 
 
 }

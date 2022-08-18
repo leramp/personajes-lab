@@ -31,6 +31,35 @@
 			"response": []
 		},
 		{
+			"name": "generos/id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"nombre\":\"infantil\",\r\n    \"imagen\":\"/usr/tmp/img5.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/generos/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generos",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "personajes",
 			"request": {
 				"method": "POST",
@@ -53,6 +82,37 @@
 					"port": "8080",
 					"path": [
 						"personajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personajes/id/peliculas/id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personajes/2/pelicula/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personajes",
+						"2",
+						"pelicula",
+						""
 					]
 				}
 			},
@@ -129,6 +189,28 @@
 					"port": "8080",
 					"path": [
 						"personajes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personajes/id/pelicula/id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personajes/2/pelicula/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personajes",
+						"2",
+						"pelicula",
 						""
 					]
 				}

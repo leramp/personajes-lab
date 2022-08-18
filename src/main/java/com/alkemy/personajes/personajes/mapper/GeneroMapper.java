@@ -5,6 +5,9 @@ import com.alkemy.personajes.personajes.entity.GeneroEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class GeneroMapper {
 
@@ -21,5 +24,18 @@ public class GeneroMapper {
         dto.setImagen(entity.getImagen());
         dto.setNombre((entity.getNombre()));
         return dto;
+    }
+    public List<GeneroDTO> generoEntity2DTOList(List<GeneroEntity> entities){
+        List<GeneroDTO> dtos = new ArrayList<>();
+        for(GeneroEntity entity : entities) {
+            dtos.add(this.generoEntity2DTO(entity));
+        }
+        return dtos;
+
+    }
+    public void generoEntityRefreshValues(GeneroEntity entity, GeneroDTO dto){
+        entity.setNombre(dto.getNombre());
+        entity.setImagen(dto.getImagen());
+
     }
 }

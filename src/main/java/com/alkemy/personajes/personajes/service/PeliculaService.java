@@ -20,6 +20,6 @@ public interface PeliculaService {
     PeliculaDTO getDetailsById(Long id);
 
     List<PeliculaBasicDTO> getByFilters(String name, String genre, String order);
-//    PeliculaEntity getEntityById(Long id);
+    PeliculaEntity getEntityById(Long id);
 
 }

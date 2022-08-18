@@ -68,10 +68,10 @@ public class PeliculaServiceImpl implements PeliculaService {
         List<PeliculaBasicDTO> dtos = this.peliculaMapper.peliculaEntityList2BasicDTOList(entities);
         return dtos;
     }
-//    public PeliculaEntity getEntityById(Long id) {
-//        Optional<PeliculaEntity> entity = peliculaRepository.findById(id);
-//        return entity.get();
-//    }
+    public PeliculaEntity getEntityById(Long id) {
+        Optional<PeliculaEntity> entity = peliculaRepository.findById(id);
+        return entity.get();
+    }
 
 
 
