@@ -74,11 +74,8 @@
 			<version>4.7.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.sendgrid/java-http-client -->
-		<dependency>
-			<groupId>com.sendgrid</groupId>
-			<artifactId>sendgrid-client</artifactId>
-			<version>4.7.4</version>
-		</dependency>
+<!--
+-->
 
 	</dependencies>
 

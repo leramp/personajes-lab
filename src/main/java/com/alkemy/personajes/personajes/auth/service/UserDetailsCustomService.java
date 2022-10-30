@@ -3,6 +3,7 @@ package com.alkemy.personajes.personajes.auth.service;
 import com.alkemy.personajes.personajes.auth.dto.UserDTO;
 import com.alkemy.personajes.personajes.auth.entity.UserEntity;
 import com.alkemy.personajes.personajes.auth.repository.UserRepository;
+import com.alkemy.personajes.personajes.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,8 +17,8 @@ import java.util.Collections;
 public class UserDetailsCustomService implements UserDetailsService {//lo importante es que tiene que implementar esto
     @Autowired
     private UserRepository userRepository;//lo tenemos para ir a buscar usuarios, esto lo creamos nosotros
- //   @Autowired
-//    private EmailService emailService;
+    @Autowired
+    private EmailService emailService;
 
     @Override//sobreescribo como voy a ir a buscar el usuario por el nombre cuando llegue
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException{
@@ -35,9 +36,9 @@ public class UserDetailsCustomService implements UserDetailsService {//lo import
         userEntity.setUsername(userDTO.getUsername());
         userEntity.setPassword(userDTO.getPassword());
         userEntity = this.userRepository.save(userEntity);
-//        if(userEntity != null){
-//            emailService.sendWelcomeEmailTo(userEntity.getUser());
-//        }
+        if(userEntity != null){
+            emailService.sendWelcomeEmailto(userEntity.getUsername());
+        }
         return userEntity != null;
     }
 }

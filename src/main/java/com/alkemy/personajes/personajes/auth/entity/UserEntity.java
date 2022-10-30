@@ -3,6 +3,8 @@ package com.alkemy.personajes.personajes.auth.entity;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,9 +14,9 @@ public class UserEntity /*implements UserDetails*/ {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    //@Email
+    @Email
     private String username;
-    //@Size(min=8)
+    @Size(min=8)
     private String password;
     //    private boolean accountNonExpired;
 //    private boolean accountNonLocked;
