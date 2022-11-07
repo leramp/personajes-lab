@@ -54,7 +54,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and().exceptionHandling()
                 .and().sessionManagement()
+                //aca le digo que ese fultro sera encargado d recibir todas las peticiones y procesarlas
+
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+       //
         //por defecto spring es STATEFUL, es decir que guarda el estado, por eso a la segundo no pide loguearse
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

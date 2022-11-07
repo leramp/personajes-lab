@@ -46,6 +46,19 @@ public class PersonajeEntity {
 
     private List<PeliculaEntity> peliculas = new ArrayList<>();
 
-    public void addPelicula(PeliculaEntity pelicula){this.peliculas.add(pelicula);}
-    public void removePelicula(PeliculaEntity pelicula){this.peliculas.remove(pelicula);}
+    public void addPelicula(PeliculaEntity pelicula) {
+        if (!peliculas.contains(pelicula)) {
+            peliculas.add(pelicula);
+            pelicula.addPersonaje(this);//esto es lo que hace que se inserte en la tabla intermedia, ya que
+            //al no ser el dueño de la relación, esto no sucede de forma automática.
+
+        }
+    }
+
+    public void removePelicula(PeliculaEntity pelicula) {
+        if (peliculas.contains(pelicula)) {
+            pelicula.removePersonaje(this);
+            peliculas.remove(pelicula);
+        }
+    }
 }

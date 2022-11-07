@@ -73,6 +73,9 @@ public class PeliculaEntity {
             inverseJoinColumns = @JoinColumn(name = "personaje_id"))
     private List<PersonajeEntity> personajes = new ArrayList<>();
 
+    public void addPersonaje(PersonajeEntity personaje){this.personajes.add(personaje);}
+    public void removePersonaje(PersonajeEntity personaje){this.personajes.remove(personaje);}
+
     @Override
     public boolean equals(Object obj){
         if(obj == null)

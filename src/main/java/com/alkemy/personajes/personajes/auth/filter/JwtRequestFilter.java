@@ -39,6 +39,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {//extiende de OPR po
         }
 
         if(username != null && SecurityContextHolder.getContext().getAuthentication() ==null){
+        //que no nulo y que todavia no exista autenticacio para este usuario
             UserDetails userDetails = this.userDetailsCustomService.loadUserByUsername(username);
             if (jwtUtil.validateToken(jwt, userDetails)) {//esto es porque necesito verificar. sin son correctas las vaclidacion
                 //creo este objeto que viene por defecto en spring y le paso el user y el password. una ves hecho eso creo
@@ -48,9 +49,10 @@ public class JwtRequestFilter extends OncePerRequestFilter {//extiende de OPR po
                 Authentication auth = authenticationManager.authenticate(authReq);
                 //Set auth in context. por ultimo le setteo la autenticacion al contexto
                 SecurityContextHolder.getContext().setAuthentication(auth);
-
+//esto es para que la proxima vez no tenga que pasar porla validacio de este filtro
             }
         }
         chain.doFilter(request, response);
+        //para finalizar le decimos que el filtro sea evaluado con cain.doFilter
     }
 }
