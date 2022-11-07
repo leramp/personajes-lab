@@ -19,7 +19,7 @@ public class PeliculaDTO {
     private String imagen;
     private String titulo;
     private String fechaCreacion;
-    private Long generoId;
+    private GeneroEntity genero;
     private int calificacion;
     private List<PersonajeDTO> personajes;
 }

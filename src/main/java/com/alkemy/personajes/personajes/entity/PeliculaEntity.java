@@ -52,8 +52,8 @@ public class PeliculaEntity {
     @JoinColumn(name= "genero_id", insertable = false, updatable = false)
     private GeneroEntity genero;
 
-    @Column (name="genero_id", nullable = false)
-    private Long generoId;
+//    @Column (name="genero_id", nullable = false)
+//    private Long generoId;
 
     private int calificacion;
     public void setCalificacion(int calificacion)
